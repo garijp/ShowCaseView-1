@@ -148,7 +148,9 @@ public class GuideView extends FrameLayout {
         startAnimation.setDuration(ANIMATION_DURATION);
         startAnimation.setFillAfter(true);
         this.startAnimation(startAnimation);
-        ((ViewGroup) ((Activity) getContext()).getWindow().getDecorView()).removeView(this);
+        if (getContext() instanceof Activity) {
+            ((ViewGroup) ((Activity) getContext()).getWindow().getDecorView()).removeView(this);
+        }
         mIsShowing = false;
         if (mGuideListener != null) {
             mGuideListener.onDismiss(target);
