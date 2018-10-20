@@ -228,7 +228,7 @@ public class GuideView extends FrameLayout {
         int centerY = getHeight() / 2;
         float diffX = centerX - rectCenterX;
         float diffY = centerY - rectCenterY;
-        if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (isLandscape()) {
             if (diffX < 0) { // left
                 xMessageView = (int) (rect.left / 2 - mMessageView.getWidth() / 2);
                 yMessageView = getHeight() / 2 - mMessageView.getHeight() / 2;
